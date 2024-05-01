@@ -17,4 +17,4 @@ jobs:
 
       - name: Copy files to AWS instance
         run: |
-          scp -o StrictHostKeyChecking=no -i ${{ secrets.EC2_SSH_KEY }} -r ./* ubuntu@54.243.1.146:/home/ubuntu/devops/
+          scp -o StrictHostKeyChecking=no -i ${{ secrets.EC2_SSH_KEY }} -r ./* ubuntu@54.243.1.146:/home/ubuntu/
