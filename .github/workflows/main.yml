@@ -17,11 +17,13 @@ jobs:
         install -m 600 -D /dev/null ~/.ssh/id_rsa
         echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/id_rsa
         ssh-keyscan -H ${{ secrets.HOST_DNS }} > ~/.ssh/known_hosts
-    - name: connect and pull
-      run: ssh ${{ secrets.USERNAME }}@${{ secrets.USERNAME }} "cd ${{ secrets.WORK_DIR }}"
-    - name: connect and pull
-	    run: |
-		    cd ${{ secrets.WORK_DIR }}
-		    git remote set-url origin git@github.com:lahiruUD/3-Tier-Full-Stack.git
-		    git checkout main
-		    git pull
+    
+    - name: connect to server and navigate to working directory
+      run: ssh ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }} "cd ${{ secrets.WORK_DIR }}"
+      
+    - name: pull from GitHub repository
+      run: |
+        cd ${{ secrets.WORK_DIR }}
+        git remote set-url origin git@github.com:lahiruUD/3-Tier-Full-Stack.git
+        git checkout main
+        git pull
