@@ -15,6 +15,11 @@ jobs:
       - name: Checkout the files
         uses: actions/checkout@v2
 
+      - name: Install SSH key
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
+
       - name: Copy files to AWS instance
         run: |
-          ssh -o StrictHostKeyChecking=no -i ${{ secrets.EC2_SSH_KEY }} ubuntu@35.175.65.163 'cd /home/ubuntu/devops && git pull'
+          ssh -o StrictHostKeyChecking=no ubuntu@35.175.65.163 'cd /home/ubuntu/devops && git pull'
