@@ -22,4 +22,4 @@ jobs:
 
       - name: Copy files to AWS instance
         run: |
-          ssh -o StrictHostKeyChecking=no root@35.175.65.163 'cd /home/ubuntu/devops && git pull'
+         ssh -o StrictHostKeyChecking=no -r ./* root@35.175.65.163 'cd /home/ubuntu/devops && git pull'
