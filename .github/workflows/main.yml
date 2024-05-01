@@ -19,9 +19,4 @@ jobs:
         
     - name: SSH into AWS instance and deploy code
       run: |
-        ssh -o StrictHostKeyChecking=no -i ${{ secrets.SSH_PRIVATE_KEY }} ubuntu@54.243.1.146 'cd /home/ubuntu/3Tier-Devops/ && git pull'
-
-
-
-
-#
+        ssh -o StrictHostKeyChecking=no -i ${{ secrets.SSH_PRIVATE_KEY }} ubuntu@54.243.1.146 'cd /home/ubuntu/devops/ && git pull'
