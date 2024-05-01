@@ -31,5 +31,5 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             sudo apt-get update
-            cd home
+            cd /home
             sudo mv * /home/ubuntu/devops/
