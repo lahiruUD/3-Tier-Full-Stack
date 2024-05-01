@@ -1,3 +1,5 @@
+
+
 name: Push-to-EC2
 
 # Trigger deployment only on push to main branch
@@ -20,6 +22,7 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
           REMOTE_HOST: ${{ secrets.HOST_DNS }}
+          REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
 
       - name: Executing remote ssh commands using ssh key
@@ -29,4 +32,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            sudo cp -ipr * /home/${{ secrets.USERNAME }}/devops/
+            cd home
+            sudo mv * /home/ubuntu/devops
+
