@@ -33,6 +33,6 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd home
-            sudo mv * /home/ubuntu/devops
+            sudo mv * /home/devops
 
 #
