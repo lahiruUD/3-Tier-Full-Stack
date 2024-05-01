@@ -26,7 +26,7 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST_DNS }}
-          username: ubuntu
+          username: ${{ secrets.USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            sudo cp -ipr * /home/ubuntu/devops/
+            sudo cp -ipr * /home/${{ secrets.USERNAME }}/devops/
