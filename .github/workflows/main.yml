@@ -21,4 +21,4 @@ jobs:
     - name: connect and pull
       run: |
         ssh ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }} "cd ${{ secrets.WORK_DIR }} "
-        sudo touch /home/file1
+        mkdir -p ${{ secrets.WORK_DIR }}/new1
