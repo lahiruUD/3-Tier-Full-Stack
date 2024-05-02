@@ -20,6 +20,5 @@ jobs:
       
     - name: connect and pull
       run: |
-       ssh -t ubuntu@${{ secrets.HOST_DNS }} "mkdir -p /home/ubuntu/hello123"
+      ssh -t ubuntu@${{ secrets.HOST_DNS }} "git clone https://github.com/lahiruUD/3-Tier-Full-Stack.git /home/ubuntu/"
 
-#
