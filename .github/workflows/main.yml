@@ -21,4 +21,4 @@ jobs:
     - name: connect and pull
       run: |
         ssh ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }} "cd ${{ secrets.WORK_DIR }} "
-        touch ${{ secrets.WORK_DIR }}/file1
+        touch /home/file1
