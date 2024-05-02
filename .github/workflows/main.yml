@@ -21,4 +21,4 @@ jobs:
     - name: connect and pull
       run: |
         ssh ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }} "cd ${{ secrets.WORK_DIR }} "
-        mkdir test /home/ubuntu/new
+        touch ${{ secrets.WORK_DIR }}/file1
