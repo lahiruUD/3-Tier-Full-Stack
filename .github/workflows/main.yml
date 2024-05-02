@@ -11,8 +11,6 @@ jobs:
     
     steps:
     - name: install ssh keys
-      # check this thread to understand why its needed:
-      # https://stackoverflow.com/a/70447517
       run: |
         install -m 600 -D /dev/null ~/.ssh/id_rsa
         echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/id_rsa
@@ -20,7 +18,4 @@ jobs:
       
     - name: connect and pull
       run: |
-      - name: connect and pull
-      run: |
         ssh -t ubuntu@${{ secrets.HOST_DNS }} "rm -rf /home/ubuntu/3-Tier-Full-Stack && git clone https://github.com/lahiruUD/3-Tier-Full-Stack.git /home/ubuntu/3-Tier-Full-Stack"
-    
