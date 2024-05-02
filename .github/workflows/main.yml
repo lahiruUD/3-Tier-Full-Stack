@@ -21,5 +21,5 @@ jobs:
     - name: connect and pull
       run: |
         ssh ubuntu@${{ secrets.HOST_DNS }}
-        mkdir -p /home/ubuntu/my1
+        sudo mkdir -p /home/ubuntu/my1
 
