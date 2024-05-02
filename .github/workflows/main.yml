@@ -20,5 +20,6 @@ jobs:
       
     - name: connect and pull
       run: |
-        ssh ubuntu@${{ secrets.HOST_DNS }} "cd /home/ubuntu/ "
-        mkdir new2
+        ssh ubuntu@${{ secrets.HOST_DNS }}
+        mkdir -p /home/ubuntu/my1
+
