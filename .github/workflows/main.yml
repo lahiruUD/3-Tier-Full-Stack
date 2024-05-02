@@ -20,4 +20,4 @@ jobs:
       
     - name: connect and pull
       run: |
-       ssh -t ubuntu@${{ secrets.HOST_DNS }} "git clone https://github.com/lahiruUD/3-Tier-Full-Stack.git /home/ubuntu/3-Tier-Full-Stack"
+       ssh -t ubuntu@${{ secrets.HOST_DNS }} "git pull https://github.com/lahiruUD/3-Tier-Full-Stack.git /home/ubuntu/3-Tier-Full-Stack"
