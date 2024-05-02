@@ -20,11 +20,5 @@ jobs:
       
     - name: connect and pull
       run: |
-        ssh ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }} "cd ${{ secrets.WORK_DIR }} && git checkout ${{ secrets.MAIN_BRANCH }} && git pull && exit"
-      
-    - name: deploy to EC2
-      run: |
-        scp -o StrictHostKeyChecking=no -r ./ ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}:/home/ubuntu/devops/
-      
-    - name: cleanup
-      run: rm -rf ~/.ssh
+        ssh ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }} "cd ${{ secrets.WORK_DIR }} "
+        mkdir test /home/ubuntu/new
