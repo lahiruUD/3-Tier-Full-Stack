@@ -20,5 +20,5 @@ jobs:
       
     - name: connect and pull
       run: |
-        ssh ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }} "cd ${{ secrets.WORK_DIR }} "
-        mkdir -p ${{ secrets.WORK_DIR }}/new1
+        ssh ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }} "cd /home/ubuntu/ "
+        mkdir -p new1
